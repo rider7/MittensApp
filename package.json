@@ -1,0 +1,22 @@
+{
+  "name": "twitter-clone",
+  "version": "1.0.0",
+  "description": "Mean stack app",
+  "main": "index.html",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rider7/MittensApp.git"
+  },
+  "keywords": [
+    "test"
+  ],
+  "author": "test",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rider7/MittensApp/issues"
+  },
+  "homepage": "https://github.com/rider7/MittensApp#readme"
+}
