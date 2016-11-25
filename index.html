@@ -1,14 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html  ng-app="mittensApp">
   <head>
     <meta charset="utf-8">
     <title>Mittens</title>
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+    // Adding Bootstrap
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    // Adding CSS style sheet
+    <script type="text/javascript" src="angular.min.js"></script>
+    // Adding Angular JS
+    <script type="text/javascript">
+    var app = angular.module('mittensApp', []);
+
+    app.controller('mittensCtrl', function($scope) {
+      // controller method takes controller name as argument AND anonymous function as second argument which takes in $scope
+      $scope.meows = [
+        'Hello I flipped over a cup',
+        'My owner just said hi to me... yum',
+        'I ran around the house today and made a mess',
+        'Hang in there!'
+      ];
+    });
+
+    </script>
     <style>
     </style>
   </head>
-  <body>
+  <body ng-controller="mittensCtrl">
 <h1 class="page-title"> Mittens </h1>
 <div class="row feed">
   <div class="col-md-4">
@@ -19,26 +37,12 @@
    <input type="password" size="30" placeholder="Password">
   </div>
   <div class="col-md-8">
-
-    <h3>
+    <h3 ng-repeat="meow in meows">
+       <!-- Repeat the elements in the array "key in myObj" / "meow in meows" -->
       <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-      Hello I flipped over a cup
+      {{meow}}
     </h3>
     <br><br>
-    <h3>
-      <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-      My owner just said hi to me... yum
-    </h3>
-    <br><br>
-    <h3>
-      <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-      I ran around the house today and made a mess
-    </h3>
-    <br><br>
-    <h3>
-      <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-      Hang in there!
-    </h3>
   </div>
 </div>
   </body>
