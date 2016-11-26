@@ -12,15 +12,13 @@
     <script type="text/javascript">
     var app = angular.module('mittensApp', []);
 
-    app.controller('mittensCtrl', function($scope) {
+    app.controller('mittensCtrl', function($scope, $http) {
       // controller method takes controller name as argument AND anonymous function as second argument which takes in $scope
-      $scope.meows = [
-        'Hello I flipped over a cup',
-        'My owner just said hi to me... yum',
-        'I ran around the house today and made a mess',
-        'Hang in there!',
-        'hello again'
-      ];
+
+      $http.get('/meows').then(function(response){
+        // Promise and then...
+          $scope.meows = response.data;
+      });
     });
 
     </script>
