@@ -4,7 +4,8 @@
   "description": "Mean stack app",
   "main": "index.html",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,11 @@
   "bugs": {
     "url": "https://github.com/rider7/MittensApp/issues"
   },
-  "homepage": "https://github.com/rider7/MittensApp#readme"
+  "homepage": "https://github.com/rider7/MittensApp#readme",
+  "dependencies": {
+    "body": "^5.1.0",
+    "express": "^4.14.0",
+    "parser": "^0.1.4"
+  },
+  "devDependencies": {}
 }
