@@ -15,6 +15,12 @@
     app.controller('mittensCtrl', function($scope, $http) {
       // controller method takes controller name as argument AND anonymous function as second argument which takes in $scope
 
+      $scope.submitNewMeow = function(){
+        // Send the data
+        $http.post('/meows', {newMeow: $scope.newMeow}).then(function(){
+          alert('success!');
+        })
+      }
       $http.get('/meows').then(function(response){
         // Promise and then...
           $scope.meows = response.data;
@@ -36,6 +42,12 @@
    <input type="password" size="30" placeholder="Password">
   </div>
   <div class="col-md-8">
+    <div class="new-meow">
+      <input type="text" class="form-control" ng-model="newMeow" placeholder="What are you meowing today?">
+       <!-- ng-model allows two way data binding -->
+      <button type="button" class="btn" ng-click="submitNewMeow()">Submit</button>
+      <!-- ng-click will invoke the function submitNewMeow -->
+    </div>
     <h3 ng-repeat="meow in meows">
        <!-- Repeat the elements in the array "key in myObj" / "meow in meows" -->
       <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
